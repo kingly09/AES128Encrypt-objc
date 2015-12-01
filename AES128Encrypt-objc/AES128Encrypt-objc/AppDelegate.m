@@ -35,6 +35,16 @@
     NSString *dectext = [[NSString alloc] initWithData:deData encoding:NSUTF8StringEncoding];
 
     NSLog(@"解密：：%@",dectext);
+    
+    NSLog(@"－－－－－－使用 AES128 + ECB + PKCS7 加密解密 －－－－－－");
+    
+    NSData *enECBData = [AESEncryptData encryptECBData:requData];
+    
+    NSData *deECBData = [AESEncryptData decryptECBData:enECBData];
+    
+    NSString *decECBtext = [[NSString alloc] initWithData:deECBData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"使用 AES128 + ECB + PKCS7 解密：：%@",decECBtext);
 
     
     return YES;

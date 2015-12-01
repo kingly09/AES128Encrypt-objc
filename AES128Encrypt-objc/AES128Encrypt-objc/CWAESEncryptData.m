@@ -13,11 +13,19 @@
 #import "CWAESEncryptData.h"
 #import <CommonCrypto/CommonCryptor.h>
 
+#define FBENCRYPT_ALGORITHM     kCCAlgorithmAES128
+#define FBENCRYPT_BLOCK_SIZE    kCCBlockSizeAES128
+#define FBENCRYPT_KEY_SIZE      kCCKeySizeAES128
+
 
 @implementation CWAESEncryptData
 
-/**
- * 加密 Data
+/*＊
+ *  AES128 + CBC + No Padding
+ *
+ *  @param data 要加密的原始数据
+ *
+ *  @return  加密后数据
  */
 - (NSData*) encryptData:(NSData *)data{
     
@@ -73,13 +81,17 @@
     }
     free(buffer);
     return nil;
-
+    
 }
-/**
- * 解密 Data
+/*＊
+ *  AES128 + CBC + No Padding
+ *
+ *  @param data 要解密的原始数据
+ *
+ *  @return  解密后数据
  */
 - (NSData*) decryptData:(NSData *)data{
-
+    
     if (![self checkInfo]) {
         return data;
     }
@@ -114,7 +126,7 @@
     }
     free(buffer);
     return nil;
-
+    
 }
 
 /**
@@ -122,20 +134,136 @@
  */
 -(BOOL) checkInfo{
     
+    if (![self checkKey]) {
+        return NO;
+    }
+    
+    if (![self checkivKey]) {
+        return NO;
+    }
+    return YES;
+}
+/**
+ * 密钥长度是否合法
+ */
+-(BOOL) checkKey{
+    
     BOOL succ = YES;
     NSData* keyData = [_sKey dataUsingEncoding:NSUTF8StringEncoding];
     if (keyData.length != 16) {
         NSLog(@"密钥长度不是16字节，请重新设置!");
         succ = NO;
     }
+    return succ;
+}
+
+/**
+ * 检查初始向量是否合法
+ */
+-(BOOL) checkivKey{
     
+    BOOL succ = YES;
     NSData* ivData = [_sIv dataUsingEncoding:NSUTF8StringEncoding];
     if (ivData.length != 16) {
         NSLog(@"iv向量不是16字节，请重新设置!");
         succ = NO;
     }
-    
     return succ;
+}
+
+/*＊
+ *  AES128 + ECB + PKCS7
+ *
+ *  @param data 要加密的原始数据
+ *
+ *  @return  加密后数据
+ */
+- (NSData*)encryptECBData:(NSData* )data{
+    
+    if (![self checkKey]) {
+        return data;
+    }
+    
+    NSData* result = nil;
+    NSData *key = [_sKey dataUsingEncoding:NSASCIIStringEncoding];
+    // setup key
+    unsigned char cKey[FBENCRYPT_KEY_SIZE];
+    bzero(cKey, sizeof(cKey));
+    [key getBytes:cKey length:FBENCRYPT_KEY_SIZE];
+    
+    // setup output buffer
+    size_t bufferSize = [data length] + FBENCRYPT_BLOCK_SIZE;
+    void *buffer = malloc(bufferSize);
+    
+    // do encrypt
+    size_t encryptedSize = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt,
+                                          FBENCRYPT_ALGORITHM,
+                                          kCCOptionECBMode|kCCOptionPKCS7Padding,
+                                          cKey,
+                                          FBENCRYPT_KEY_SIZE,
+                                          nil,
+                                          [data bytes],
+                                          [data length],
+                                          buffer,
+                                          bufferSize,
+                                          &encryptedSize);
+    if (cryptStatus == kCCSuccess) {
+        result = [NSData dataWithBytesNoCopy:buffer length:encryptedSize];
+    } else {
+        free(buffer);
+        NSLog(@"[ERROR] failed to encrypt|CCCryptoStatus: %d", cryptStatus);
+    }
+    
+    return result;
+    
+    
+}
+
+/*＊
+ *  AES128 + ECB + PKCS7
+ *
+ *  @param data 要解密的原始数据
+ *
+ *  @return  解密后数据
+ */
+- (NSData*)decryptECBData:(NSData* )data{
+    if (![self checkKey]) {
+        return data;
+    }
+    NSData* result = nil;
+    NSData *key = [_sKey dataUsingEncoding:NSASCIIStringEncoding];
+    // setup key
+    unsigned char cKey[FBENCRYPT_KEY_SIZE];
+    bzero(cKey, sizeof(cKey));
+    [key getBytes:cKey length:FBENCRYPT_KEY_SIZE];
+    
+    // setup output buffer
+    size_t bufferSize = [data length] + FBENCRYPT_BLOCK_SIZE;
+    void *buffer = malloc(bufferSize);
+    
+    // do decrypt
+    size_t decryptedSize = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
+                                          FBENCRYPT_ALGORITHM,
+                                          kCCOptionECBMode|kCCOptionPKCS7Padding,
+                                          cKey,
+                                          FBENCRYPT_KEY_SIZE,
+                                          nil,
+                                          [data bytes],
+                                          [data length],
+                                          buffer,
+                                          bufferSize,
+                                          &decryptedSize);
+    
+    if (cryptStatus == kCCSuccess) {
+        result = [NSData dataWithBytesNoCopy:buffer length:decryptedSize];
+    } else {
+        free(buffer);
+        NSLog(@"[ERROR] failed to decrypt| CCCryptoStatus: %d", cryptStatus);
+    }
+    
+    return result;
 }
 
 @end

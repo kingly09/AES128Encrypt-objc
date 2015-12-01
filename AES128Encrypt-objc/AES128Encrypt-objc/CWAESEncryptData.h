@@ -14,13 +14,39 @@
 @property (nonatomic,copy) NSString *sIv;  //16位的字符串
 
 
-/**
- * 加密 Data
+/*＊
+ *  AES128 + CBC + No Padding
+ *
+ *  @param data 要加密的原始数据
+ *
+ *  @return  加密后数据
  */
 - (NSData*) encryptData:(NSData *)data;
-/**
- * 解密 Data
+/*＊
+ *  AES128 + CBC + No Padding
+ *
+ *  @param data 要解密的原始数据
+ *
+ *  @return  解密后数据
  */
 - (NSData*) decryptData:(NSData *)data;
+
+/*＊
+ *  AES128 + ECB + PKCS7
+ *
+ *  @param data 要加密的原始数据
+ *
+ *  @return  加密后数据
+ */
+- (NSData*)encryptECBData:(NSData*)data;
+
+/*＊
+ *  AES128 + ECB + PKCS7
+ *
+ *  @param data 要解密的原始数据
+ *
+ *  @return  解密后数据
+ */
+- (NSData*)decryptECBData:(NSData*)data;
 
 @end
