@@ -265,5 +265,79 @@
     
     return result;
 }
+/*＊
+ *  AES256 + ECB + PKCS7
+ *
+ *  @param data 要加密的原始数据
+ *
+ *  @return  加密后数据
+ */
+- (NSData *)AES256EncryptWithData:(NSData* )data {
+    // 'key' 必须是32字节 AES256,不足的用零补充
+    char keyPtr[kCCKeySizeAES256+1];
+    bzero(keyPtr, sizeof(keyPtr)); // 用零填充（填充）
+    // fetch key data
+    [_sKey getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
+    
+    NSUInteger dataLength = [data length];
+    
+    //块加密，输出的大小总是小于或等于输入大小加一块大小。
+    //我们需要在这里添加一个块大小的原因
+    size_t bufferSize = dataLength + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
+    
+    size_t numBytesEncrypted = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt,
+                                          kCCAlgorithmAES128,kCCOptionPKCS7Padding,
+                                          keyPtr, kCCKeySizeAES256,
+                                          NULL /* initialization vector (optional) */,
+                                          [data bytes], dataLength, /* input */
+                                          buffer, bufferSize, /* output */
+                                          &numBytesEncrypted);
+    if (cryptStatus == kCCSuccess) {
+        //返回的NSData以缓冲区并将它释放自由
+        return [NSData dataWithBytesNoCopy:buffer length:numBytesEncrypted];
+    }
+    
+    free(buffer); //释放缓冲区;
+    return nil;
+}
+/*＊
+ *  AES256 + ECB + PKCS7
+ *
+ *  @param data 要解密的原始数据
+ *
+ *  @return  解密后数据
+ */
+- (NSData *)AES256DecryptWithData:(NSData* )data  {
+    
+    char keyPtr[kCCKeySizeAES256+1];
+    bzero(keyPtr, sizeof(keyPtr));
+    
+    // fetch key data
+    [_sKey getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
+    
+    NSUInteger dataLength = [data  length];
+
+    size_t bufferSize = dataLength + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
+    
+    size_t numBytesDecrypted = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
+                                          kCCAlgorithmAES128,kCCOptionPKCS7Padding,
+                                          keyPtr, kCCKeySizeAES256,
+                                          NULL /* initialization vector (optional) */,
+                                          [data bytes], dataLength, /* input */
+                                          buffer, bufferSize, /* output */
+                                          &numBytesDecrypted);
+    
+    if (cryptStatus == kCCSuccess) {
+        
+        return [NSData dataWithBytesNoCopy:buffer length:numBytesDecrypted];
+    }
+    
+    free(buffer); //free the buffer;
+    return nil;
+}
 
 @end

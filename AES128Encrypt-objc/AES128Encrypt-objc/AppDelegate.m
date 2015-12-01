@@ -20,7 +20,7 @@
     // Override point for customization after application launch.
     
     
-    NSString *requestStr = [NSString stringWithFormat:@"12345678901234567"];
+    NSString *requestStr = [NSString stringWithFormat:@"123456789012345678"];
     NSData *requData = [requestStr dataUsingEncoding:NSUTF8StringEncoding];
     
     CWAESEncryptData *AESEncryptData = [[CWAESEncryptData alloc] init];
@@ -45,6 +45,18 @@
     NSString *decECBtext = [[NSString alloc] initWithData:deECBData encoding:NSUTF8StringEncoding];
     
     NSLog(@"使用 AES128 + ECB + PKCS7 解密：：%@",decECBtext);
+    
+    NSLog(@"－－－－－－使用 AES256 + ECB + PKCS7 加密解密 －－－－－－");
+    AESEncryptData.sKey = @"123456789012345678901234567890123";
+    NSData *enAES256Data = [AESEncryptData AES256EncryptWithData:requData];
+    
+    NSData *deAES256BData = [AESEncryptData AES256DecryptWithData:enAES256Data];
+    
+    NSString *deAES256text = [[NSString alloc] initWithData:deAES256BData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"使用 AES256 + ECB + PKCS7 解密：：%@",deAES256text);
+
+    
 
     
     return YES;

@@ -48,5 +48,21 @@
  *  @return  解密后数据
  */
 - (NSData*)decryptECBData:(NSData*)data;
+/*＊
+ *  AES256 + ECB + PKCS7
+ *
+ *  @param data 要加密的原始数据
+ *
+ *  @return  加密后数据
+ */
+- (NSData *)AES256EncryptWithData:(NSData* )data;
+/*＊
+ *  AES256 + ECB + PKCS7
+ *
+ *  @param data 要解密的原始数据
+ *
+ *  @return  解密后数据
+ */
+- (NSData *)AES256DecryptWithData:(NSData* )data;
 
 @end
