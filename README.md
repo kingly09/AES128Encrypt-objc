@@ -6,6 +6,7 @@ AES 几种加密方式如下：
 # 例子DEMO
 
 NSString *requestStr = [NSString stringWithFormat:@"123456789012345678"];
+
 NSData *requData = [requestStr dataUsingEncoding:NSUTF8StringEncoding];
 
 //初始化
@@ -32,8 +33,11 @@ NSData *deECBData = [AESEncryptData decryptECBData:enECBData];
 # 使用 AES256 + ECB + PKCS7 加密解密 
 
 AESEncryptData.sKey = @"123456789012345678901234567890123";
+
 NSData *enAES256Data = [AESEncryptData AES256EncryptWithData:requData];
+
 NSData *deAES256BData = [AESEncryptData AES256DecryptWithData:enAES256Data];
+
 
 
 
