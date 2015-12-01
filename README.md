@@ -10,6 +10,7 @@ NSString *requestStr = [NSString stringWithFormat:@"123456789012345678"];
 NSData *requData = [requestStr dataUsingEncoding:NSUTF8StringEncoding];
 
 //初始化
+
 CWAESEncryptData *AESEncryptData = [[CWAESEncryptData alloc] init];
 
 AESEncryptData.sKey = @"1234567890123456";
