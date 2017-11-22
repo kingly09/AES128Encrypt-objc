@@ -26,6 +26,7 @@
      NSLog(@"加密后：%@",enString);
     NSString *deString = [[KYEncrypt sharedInstance] AES256DecryptWithString:enString withKey:key];
     
+     NSLog(@"解密后：%@",deString);
     
     
 }
