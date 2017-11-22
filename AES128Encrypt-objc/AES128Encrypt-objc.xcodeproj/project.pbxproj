@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC207DB71FC55BA00019EAA5 /* KYEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = BC207DB21FC55B9F0019EAA5 /* KYEncrypt.m */; };
+		BC207DB81FC55BA00019EAA5 /* KYGTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = BC207DB31FC55B9F0019EAA5 /* KYGTMBase64.m */; };
 		BCF003F11C0D3EF200AB7A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF003F01C0D3EF200AB7A4A /* main.m */; };
 		BCF003F41C0D3EF200AB7A4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF003F31C0D3EF200AB7A4A /* AppDelegate.m */; };
 		BCF003F71C0D3EF200AB7A4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF003F61C0D3EF200AB7A4A /* ViewController.m */; };
@@ -16,6 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC207DB21FC55B9F0019EAA5 /* KYEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYEncrypt.m; sourceTree = "<group>"; };
+		BC207DB31FC55B9F0019EAA5 /* KYGTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYGTMBase64.m; sourceTree = "<group>"; };
+		BC207DB41FC55B9F0019EAA5 /* KYEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYEncrypt.h; sourceTree = "<group>"; };
+		BC207DB51FC55B9F0019EAA5 /* KYGTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYGTMBase64.h; sourceTree = "<group>"; };
+		BC207DB61FC55B9F0019EAA5 /* KYGTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYGTMDefines.h; sourceTree = "<group>"; };
 		BCF003EC1C0D3EF200AB7A4A /* AES128Encrypt-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AES128Encrypt-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF003F01C0D3EF200AB7A4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCF003F21C0D3EF200AB7A4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +46,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC207DB11FC55B9F0019EAA5 /* KYEncrypt */ = {
+			isa = PBXGroup;
+			children = (
+				BC207DB21FC55B9F0019EAA5 /* KYEncrypt.m */,
+				BC207DB41FC55B9F0019EAA5 /* KYEncrypt.h */,
+				BC207DB31FC55B9F0019EAA5 /* KYGTMBase64.m */,
+				BC207DB51FC55B9F0019EAA5 /* KYGTMBase64.h */,
+				BC207DB61FC55B9F0019EAA5 /* KYGTMDefines.h */,
+			);
+			name = KYEncrypt;
+			path = ../../KYEncrypt;
+			sourceTree = "<group>";
+		};
 		BCF003E31C0D3EF200AB7A4A = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +78,7 @@
 		BCF003EE1C0D3EF200AB7A4A /* AES128Encrypt-objc */ = {
 			isa = PBXGroup;
 			children = (
+				BC207DB11FC55B9F0019EAA5 /* KYEncrypt */,
 				BCF003F21C0D3EF200AB7A4A /* AppDelegate.h */,
 				BCF003F31C0D3EF200AB7A4A /* AppDelegate.m */,
 				BCF003F51C0D3EF200AB7A4A /* ViewController.h */,
@@ -150,8 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCF003F71C0D3EF200AB7A4A /* ViewController.m in Sources */,
+				BC207DB81FC55BA00019EAA5 /* KYGTMBase64.m in Sources */,
 				BCF003F41C0D3EF200AB7A4A /* AppDelegate.m in Sources */,
 				BCF003F11C0D3EF200AB7A4A /* main.m in Sources */,
+				BC207DB71FC55BA00019EAA5 /* KYEncrypt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
