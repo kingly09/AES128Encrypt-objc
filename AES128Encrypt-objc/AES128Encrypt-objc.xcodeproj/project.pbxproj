@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC1FB7C51FC56096003D87BB /* libapple_crypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libapple_crypto.tbd; path = usr/lib/libapple_crypto.tbd; sourceTree = SDKROOT; };
 		BC207DB21FC55B9F0019EAA5 /* KYEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYEncrypt.m; sourceTree = "<group>"; };
 		BC207DB31FC55B9F0019EAA5 /* KYGTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYGTMBase64.m; sourceTree = "<group>"; };
 		BC207DB41FC55B9F0019EAA5 /* KYEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYEncrypt.h; sourceTree = "<group>"; };
@@ -46,11 +47,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC1FB7C41FC56096003D87BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC1FB7C51FC56096003D87BB /* libapple_crypto.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC207DB11FC55B9F0019EAA5 /* KYEncrypt */ = {
 			isa = PBXGroup;
 			children = (
-				BC207DB21FC55B9F0019EAA5 /* KYEncrypt.m */,
 				BC207DB41FC55B9F0019EAA5 /* KYEncrypt.h */,
+				BC207DB21FC55B9F0019EAA5 /* KYEncrypt.m */,
 				BC207DB51FC55B9F0019EAA5 /* KYGTMBase64.h */,
 				BC207DB31FC55B9F0019EAA5 /* KYGTMBase64.m */,
 				BC207DB61FC55B9F0019EAA5 /* KYGTMDefines.h */,
@@ -64,6 +73,7 @@
 			children = (
 				BCF003EE1C0D3EF200AB7A4A /* AES128Encrypt-objc */,
 				BCF003ED1C0D3EF200AB7A4A /* Products */,
+				BC1FB7C41FC56096003D87BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

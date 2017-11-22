@@ -25,7 +25,8 @@ s.platform     = :ios, "7.0"
 s.source       = { :git => "https://github.com/kingly09/AES128Encrypt-objc.git", :tag => s.version.to_s }
 s.social_media_url   = "https://github.com/kingly09"
 s.source_files = 'KYEncrypt/**/*'
-s.framework    = "UIKit"
+s.library  = 'crypto'
+s.frameworks =  "UIKit","Foundation"
 s.requires_arc = true
 
 
