@@ -51,8 +51,8 @@
 			children = (
 				BC207DB21FC55B9F0019EAA5 /* KYEncrypt.m */,
 				BC207DB41FC55B9F0019EAA5 /* KYEncrypt.h */,
-				BC207DB31FC55B9F0019EAA5 /* KYGTMBase64.m */,
 				BC207DB51FC55B9F0019EAA5 /* KYGTMBase64.h */,
+				BC207DB31FC55B9F0019EAA5 /* KYGTMBase64.m */,
 				BC207DB61FC55B9F0019EAA5 /* KYGTMDefines.h */,
 			);
 			name = KYEncrypt;
@@ -131,6 +131,7 @@
 				TargetAttributes = {
 					BCF003EB1C0D3EF200AB7A4A = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = KE5MJRYE2S;
 					};
 				};
 			};
@@ -286,7 +287,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KE5MJRYE2S;
 				INFOPLIST_FILE = "AES128Encrypt-objc/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cw.NetworkDemo.AES128Encrypt-objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -297,7 +300,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KE5MJRYE2S;
 				INFOPLIST_FILE = "AES128Encrypt-objc/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cw.NetworkDemo.AES128Encrypt-objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
