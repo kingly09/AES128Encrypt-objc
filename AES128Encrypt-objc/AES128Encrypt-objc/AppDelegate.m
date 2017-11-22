@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "CWAESEncryptData.h"
+#import "KYEncrypt.h"
+#import "KYGTMBase64.h"
 
 @interface AppDelegate ()
 
@@ -20,43 +21,51 @@
     // Override point for customization after application launch.
     
     
-    NSString *requestStr = [NSString stringWithFormat:@"123456789012345678"];
+    NSString *requestStr = [NSString stringWithFormat:@"123456"];
     NSData *requData = [requestStr dataUsingEncoding:NSUTF8StringEncoding];
     
-    CWAESEncryptData *AESEncryptData = [[CWAESEncryptData alloc] init];
+    KYEncrypt *AESEncryptData = [[KYEncrypt alloc] init];
     AESEncryptData.sKey = @"1234567890123456";
     AESEncryptData.sIv  = @"6543210123456789";
-    
-    
+
+
     NSData *enData = [AESEncryptData encryptData:requData];
-    
+
     NSData *deData = [AESEncryptData decryptData:enData];
-    
+
     NSString *dectext = [[NSString alloc] initWithData:deData encoding:NSUTF8StringEncoding];
 
     NSLog(@"解密：：%@",dectext);
-    
+
     NSLog(@"－－－－－－使用 AES128 + ECB + PKCS7 加密解密 －－－－－－");
-    
+
     NSData *enECBData = [AESEncryptData encryptECBData:requData];
-    
+
     NSData *deECBData = [AESEncryptData decryptECBData:enECBData];
-    
+
     NSString *decECBtext = [[NSString alloc] initWithData:deECBData encoding:NSUTF8StringEncoding];
-    
+
     NSLog(@"使用 AES128 + ECB + PKCS7 解密：：%@",decECBtext);
     
-    NSLog(@"－－－－－－使用 AES256 + ECB + PKCS7 加密解密 －－－－－－");
-    AESEncryptData.sKey = @"123456789012345678901234567890123";
+    NSLog(@"－－－－－－使用 AES256 －－－－－－");
+    AESEncryptData.sKey = @"111111";
     NSData *enAES256Data = [AESEncryptData AES256EncryptWithData:requData];
     
-    NSData *deAES256BData = [AESEncryptData AES256DecryptWithData:enAES256Data];
+    //最终结果再base64转码
+    NSString *resultStr = [KYGTMBase64 stringByEncodingData:enAES256Data];
+    
+    
+    NSLog(@"AES256 加密：：%@",resultStr);
+    
+    
+    NSData *AES256Data  = [KYGTMBase64 decodeString:resultStr];
+    
+    NSData *deAES256BData = [AESEncryptData AES256DecryptWithData:AES256Data];
     
     NSString *deAES256text = [[NSString alloc] initWithData:deAES256BData encoding:NSUTF8StringEncoding];
     
-    NSLog(@"使用 AES256 + ECB + PKCS7 解密：：%@",deAES256text);
+    NSLog(@"使用 AES256  解密：：%@",deAES256text);
 
-    
 
     
     return YES;

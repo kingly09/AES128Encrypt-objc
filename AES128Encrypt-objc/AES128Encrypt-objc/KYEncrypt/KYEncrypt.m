@@ -1,24 +1,50 @@
 //
-//  CWAESEncryptData.m
+//  KYEncrypt.m
 //  AES128Encrypt-objc
 //
-//  Created by kingly on 15/12/1.
-//  Copyright © 2015年 kingly. All rights reserved.
+//  Created by kingly on 2017/11/22.
+//  Copyright © 2017年 kingly. All rights reserved.
 //
-/**
- * AES128 CBC
- * No Padding加密方式
- */
 
-#import "CWAESEncryptData.h"
+#import "KYEncrypt.h"
 #import <CommonCrypto/CommonCryptor.h>
+#import "KYGTMBase64.h"
 
 #define FBENCRYPT_ALGORITHM     kCCAlgorithmAES128
 #define FBENCRYPT_BLOCK_SIZE    kCCBlockSizeAES128
 #define FBENCRYPT_KEY_SIZE      kCCKeySizeAES128
 
+@implementation KYEncrypt
 
-@implementation CWAESEncryptData
+static KYEncrypt *sharedObj = nil; //第一步：静态实例，并初始化。
+/**
+ * @brief 返回实例
+ */
++ (KYEncrypt *) sharedInstance  //第二步：实例构造检查静态实例是否为nil
+{
+    @synchronized (self)
+    {
+        if (sharedObj == nil)
+        {
+            sharedObj = [[self alloc] init];
+        }
+    }
+    return sharedObj;
+}
++ (id) allocWithZone:(NSZone *)zone //第三步：重写allocWithZone方法
+{
+    @synchronized (self) {
+        if (sharedObj == nil) {
+            sharedObj = [super allocWithZone:zone];
+            return sharedObj;
+        }
+    }
+    return nil;
+}
+- (id) copyWithZone:(NSZone *)zone //第四步
+{
+    return self;
+}
 
 /*＊
  *  AES128 + CBC + No Padding
@@ -318,7 +344,7 @@
     [_sKey getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
     
     NSUInteger dataLength = [data  length];
-
+    
     size_t bufferSize = dataLength + kCCBlockSizeAES128;
     void *buffer = malloc(bufferSize);
     
@@ -339,5 +365,39 @@
     free(buffer); //free the buffer;
     return nil;
 }
+
+
+/**
+ 使用 AES256 + ECB + PKCS7加密字符串
+ 
+ @param str 需要加密的字符串
+ @param key 密钥
+ @return 返回加密的字符串
+ */
+- (NSString *)AES256EncryptWithString:(NSString *)str withKey:(NSString *)key {
+    
+    _sKey = key;
+    NSData *requData = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *enAES256Data = [self AES256EncryptWithData:requData];
+    //最终结果再base64转码
+    NSString *resultStr = [KYGTMBase64 stringByEncodingData:enAES256Data];
+    return resultStr;
+}
+
+/**
+ 使用 AES256 + ECB + PKCS7 解密字符串
+ 
+ @param str 需要加密的字符串
+ @param key 密钥
+ @return 返回加密的字符串
+ */
+- (NSString *)AES256DecryptWithString:(NSString *)str withKey:(NSString *)key {
+    
+    NSData *AES256Data  = [KYGTMBase64 decodeString:str];
+    NSData *deAES256BData = [self AES256DecryptWithData:AES256Data];
+    NSString *deAES256text = [[NSString alloc] initWithData:deAES256BData encoding:NSUTF8StringEncoding];
+    return deAES256text;
+}
+
 
 @end

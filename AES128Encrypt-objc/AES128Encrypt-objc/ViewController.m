@@ -7,9 +7,7 @@
 //
 
 #import "ViewController.h"
-
-
-
+#import "KYEncrypt.h"
 
 @interface ViewController ()
 
@@ -20,6 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *string = @"原始字符串：123456";
+    NSString *key    = @"K123456";
+    NSString *enString = [[KYEncrypt sharedInstance] AES256EncryptWithString:string withKey:key];
+     NSLog(@"加密之前：%@",string);
+     NSLog(@"加密后：%@",enString);
+    NSString *deString = [[KYEncrypt sharedInstance] AES256DecryptWithString:enString withKey:key];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
