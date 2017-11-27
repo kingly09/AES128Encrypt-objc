@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		BC207DB71FC55BA00019EAA5 /* KYEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = BC207DB21FC55B9F0019EAA5 /* KYEncrypt.m */; };
 		BC207DB81FC55BA00019EAA5 /* KYGTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = BC207DB31FC55B9F0019EAA5 /* KYGTMBase64.m */; };
+		BCCF872C1FCBFFB9000FA824 /* KYEncrypt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCF87231FCBFFB9000FA824 /* KYEncrypt.framework */; };
+		BCCF87331FCBFFB9000FA824 /* KYEncryptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCF87321FCBFFB9000FA824 /* KYEncryptTests.m */; };
+		BCCF87381FCBFFB9000FA824 /* KYEncrypt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCF87231FCBFFB9000FA824 /* KYEncrypt.framework */; };
+		BCCF87391FCBFFB9000FA824 /* KYEncrypt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BCCF87231FCBFFB9000FA824 /* KYEncrypt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BCF003F11C0D3EF200AB7A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF003F01C0D3EF200AB7A4A /* main.m */; };
 		BCF003F41C0D3EF200AB7A4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF003F31C0D3EF200AB7A4A /* AppDelegate.m */; };
 		BCF003F71C0D3EF200AB7A4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF003F61C0D3EF200AB7A4A /* ViewController.m */; };
@@ -17,12 +21,55 @@
 		BCF003FF1C0D3EF200AB7A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCF003FD1C0D3EF200AB7A4A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BCCF872D1FCBFFB9000FA824 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCF003E41C0D3EF200AB7A4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCCF87221FCBFFB9000FA824;
+			remoteInfo = KYEncrypt;
+		};
+		BCCF872F1FCBFFB9000FA824 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCF003E41C0D3EF200AB7A4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCF003EB1C0D3EF200AB7A4A;
+			remoteInfo = "AES128Encrypt-objc";
+		};
+		BCCF87361FCBFFB9000FA824 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCF003E41C0D3EF200AB7A4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCCF87221FCBFFB9000FA824;
+			remoteInfo = KYEncrypt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BCCF873F1FCBFFB9000FA824 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BCCF87391FCBFFB9000FA824 /* KYEncrypt.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BC207DB21FC55B9F0019EAA5 /* KYEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYEncrypt.m; sourceTree = "<group>"; };
 		BC207DB31FC55B9F0019EAA5 /* KYGTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYGTMBase64.m; sourceTree = "<group>"; };
 		BC207DB41FC55B9F0019EAA5 /* KYEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYEncrypt.h; sourceTree = "<group>"; };
 		BC207DB51FC55B9F0019EAA5 /* KYGTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYGTMBase64.h; sourceTree = "<group>"; };
 		BC207DB61FC55B9F0019EAA5 /* KYGTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYGTMDefines.h; sourceTree = "<group>"; };
+		BCCF87231FCBFFB9000FA824 /* KYEncrypt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KYEncrypt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCCF87261FCBFFB9000FA824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCCF872B1FCBFFB9000FA824 /* KYEncryptTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KYEncryptTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCCF87321FCBFFB9000FA824 /* KYEncryptTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYEncryptTests.m; sourceTree = "<group>"; };
+		BCCF87341FCBFFB9000FA824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCF003EC1C0D3EF200AB7A4A /* AES128Encrypt-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AES128Encrypt-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF003F01C0D3EF200AB7A4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCF003F21C0D3EF200AB7A4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -36,10 +83,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BCCF871F1FCBFFB9000FA824 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCCF87281FCBFFB9000FA824 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCCF872C1FCBFFB9000FA824 /* KYEncrypt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCF003E91C0D3EF200AB7A4A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCF87381FCBFFB9000FA824 /* KYEncrypt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,10 +129,29 @@
 			path = ../../KYEncrypt;
 			sourceTree = "<group>";
 		};
+		BCCF87241FCBFFB9000FA824 /* KYEncrypt */ = {
+			isa = PBXGroup;
+			children = (
+				BCCF87261FCBFFB9000FA824 /* Info.plist */,
+			);
+			path = KYEncrypt;
+			sourceTree = "<group>";
+		};
+		BCCF87311FCBFFB9000FA824 /* KYEncryptTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCCF87321FCBFFB9000FA824 /* KYEncryptTests.m */,
+				BCCF87341FCBFFB9000FA824 /* Info.plist */,
+			);
+			path = KYEncryptTests;
+			sourceTree = "<group>";
+		};
 		BCF003E31C0D3EF200AB7A4A = {
 			isa = PBXGroup;
 			children = (
 				BCF003EE1C0D3EF200AB7A4A /* AES128Encrypt-objc */,
+				BCCF87241FCBFFB9000FA824 /* KYEncrypt */,
+				BCCF87311FCBFFB9000FA824 /* KYEncryptTests */,
 				BCF003ED1C0D3EF200AB7A4A /* Products */,
 				BC1FB7C41FC56096003D87BB /* Frameworks */,
 			);
@@ -79,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				BCF003EC1C0D3EF200AB7A4A /* AES128Encrypt-objc.app */,
+				BCCF87231FCBFFB9000FA824 /* KYEncrypt.framework */,
+				BCCF872B1FCBFFB9000FA824 /* KYEncryptTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,7 +194,54 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		BCCF87201FCBFFB9000FA824 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		BCCF87221FCBFFB9000FA824 /* KYEncrypt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCCF873E1FCBFFB9000FA824 /* Build configuration list for PBXNativeTarget "KYEncrypt" */;
+			buildPhases = (
+				BCCF871E1FCBFFB9000FA824 /* Sources */,
+				BCCF871F1FCBFFB9000FA824 /* Frameworks */,
+				BCCF87201FCBFFB9000FA824 /* Headers */,
+				BCCF87211FCBFFB9000FA824 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KYEncrypt;
+			productName = KYEncrypt;
+			productReference = BCCF87231FCBFFB9000FA824 /* KYEncrypt.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BCCF872A1FCBFFB9000FA824 /* KYEncryptTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCCF87401FCBFFB9000FA824 /* Build configuration list for PBXNativeTarget "KYEncryptTests" */;
+			buildPhases = (
+				BCCF87271FCBFFB9000FA824 /* Sources */,
+				BCCF87281FCBFFB9000FA824 /* Frameworks */,
+				BCCF87291FCBFFB9000FA824 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCCF872E1FCBFFB9000FA824 /* PBXTargetDependency */,
+				BCCF87301FCBFFB9000FA824 /* PBXTargetDependency */,
+			);
+			name = KYEncryptTests;
+			productName = KYEncryptTests;
+			productReference = BCCF872B1FCBFFB9000FA824 /* KYEncryptTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BCF003EB1C0D3EF200AB7A4A /* AES128Encrypt-objc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCF004031C0D3EF200AB7A4A /* Build configuration list for PBXNativeTarget "AES128Encrypt-objc" */;
@@ -118,10 +249,12 @@
 				BCF003E81C0D3EF200AB7A4A /* Sources */,
 				BCF003E91C0D3EF200AB7A4A /* Frameworks */,
 				BCF003EA1C0D3EF200AB7A4A /* Resources */,
+				BCCF873F1FCBFFB9000FA824 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BCCF87371FCBFFB9000FA824 /* PBXTargetDependency */,
 			);
 			name = "AES128Encrypt-objc";
 			productName = "AES128Encrypt-objc";
@@ -137,6 +270,17 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = kingly;
 				TargetAttributes = {
+					BCCF87221FCBFFB9000FA824 = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = KE5MJRYE2S;
+						ProvisioningStyle = Automatic;
+					};
+					BCCF872A1FCBFFB9000FA824 = {
+						CreatedOnToolsVersion = 9.1;
+						DevelopmentTeam = KE5MJRYE2S;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BCF003EB1C0D3EF200AB7A4A;
+					};
 					BCF003EB1C0D3EF200AB7A4A = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = KE5MJRYE2S;
@@ -157,11 +301,27 @@
 			projectRoot = "";
 			targets = (
 				BCF003EB1C0D3EF200AB7A4A /* AES128Encrypt-objc */,
+				BCCF87221FCBFFB9000FA824 /* KYEncrypt */,
+				BCCF872A1FCBFFB9000FA824 /* KYEncryptTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BCCF87211FCBFFB9000FA824 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCCF87291FCBFFB9000FA824 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCF003EA1C0D3EF200AB7A4A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +335,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BCCF871E1FCBFFB9000FA824 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCCF87271FCBFFB9000FA824 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCCF87331FCBFFB9000FA824 /* KYEncryptTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCF003E81C0D3EF200AB7A4A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,6 +363,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCCF872E1FCBFFB9000FA824 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCCF87221FCBFFB9000FA824 /* KYEncrypt */;
+			targetProxy = BCCF872D1FCBFFB9000FA824 /* PBXContainerItemProxy */;
+		};
+		BCCF87301FCBFFB9000FA824 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCF003EB1C0D3EF200AB7A4A /* AES128Encrypt-objc */;
+			targetProxy = BCCF872F1FCBFFB9000FA824 /* PBXContainerItemProxy */;
+		};
+		BCCF87371FCBFFB9000FA824 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCCF87221FCBFFB9000FA824 /* KYEncrypt */;
+			targetProxy = BCCF87361FCBFFB9000FA824 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BCF003F81C0D3EF200AB7A4A /* Main.storyboard */ = {
@@ -209,6 +402,142 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BCCF873A1FCBFFB9000FA824 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KE5MJRYE2S;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KYEncrypt/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bc.KYEncrypt;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BCCF873B1FCBFFB9000FA824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KE5MJRYE2S;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KYEncrypt/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bc.KYEncrypt;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BCCF873C1FCBFFB9000FA824 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE5MJRYE2S;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KYEncryptTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bc.KYEncryptTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AES128Encrypt-objc.app/AES128Encrypt-objc";
+			};
+			name = Debug;
+		};
+		BCCF873D1FCBFFB9000FA824 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE5MJRYE2S;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KYEncryptTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bc.KYEncryptTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AES128Encrypt-objc.app/AES128Encrypt-objc";
+			};
+			name = Release;
+		};
 		BCF004011C0D3EF200AB7A4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -295,6 +624,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = KE5MJRYE2S;
 				INFOPLIST_FILE = "AES128Encrypt-objc/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -308,6 +638,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = KE5MJRYE2S;
 				INFOPLIST_FILE = "AES128Encrypt-objc/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -320,6 +651,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BCCF873E1FCBFFB9000FA824 /* Build configuration list for PBXNativeTarget "KYEncrypt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCCF873A1FCBFFB9000FA824 /* Debug */,
+				BCCF873B1FCBFFB9000FA824 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCCF87401FCBFFB9000FA824 /* Build configuration list for PBXNativeTarget "KYEncryptTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCCF873C1FCBFFB9000FA824 /* Debug */,
+				BCCF873D1FCBFFB9000FA824 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BCF003E71C0D3EF200AB7A4A /* Build configuration list for PBXProject "AES128Encrypt-objc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
