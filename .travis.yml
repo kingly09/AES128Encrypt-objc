@@ -1,0 +1,3 @@
+language: objective-c
+xcode_project: AES128Encrypt-objc/AES128Encrypt-objc.xcodeproj
+xcode_schemes: AES128Encrypt-objc
