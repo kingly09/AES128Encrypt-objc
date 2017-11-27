@@ -13,6 +13,11 @@
 		BCCF87331FCBFFB9000FA824 /* KYEncryptTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCF87321FCBFFB9000FA824 /* KYEncryptTests.m */; };
 		BCCF87381FCBFFB9000FA824 /* KYEncrypt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCCF87231FCBFFB9000FA824 /* KYEncrypt.framework */; };
 		BCCF87391FCBFFB9000FA824 /* KYEncrypt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BCCF87231FCBFFB9000FA824 /* KYEncrypt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BCCF87411FCC00A3000FA824 /* KYEncrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = BC207DB41FC55B9F0019EAA5 /* KYEncrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BCCF87421FCC00AD000FA824 /* KYEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = BC207DB21FC55B9F0019EAA5 /* KYEncrypt.m */; };
+		BCCF87431FCC00B2000FA824 /* KYGTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = BC207DB31FC55B9F0019EAA5 /* KYGTMBase64.m */; };
+		BCCF87441FCC00BA000FA824 /* KYGTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = BC207DB51FC55B9F0019EAA5 /* KYGTMBase64.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		BCCF87451FCC00BD000FA824 /* KYGTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = BC207DB61FC55B9F0019EAA5 /* KYGTMDefines.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BCF003F11C0D3EF200AB7A4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF003F01C0D3EF200AB7A4A /* main.m */; };
 		BCF003F41C0D3EF200AB7A4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF003F31C0D3EF200AB7A4A /* AppDelegate.m */; };
 		BCF003F71C0D3EF200AB7A4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF003F61C0D3EF200AB7A4A /* ViewController.m */; };
@@ -199,6 +204,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCF87411FCC00A3000FA824 /* KYEncrypt.h in Headers */,
+				BCCF87441FCC00BA000FA824 /* KYGTMBase64.h in Headers */,
+				BCCF87451FCC00BD000FA824 /* KYGTMDefines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,8 +217,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCCF873E1FCBFFB9000FA824 /* Build configuration list for PBXNativeTarget "KYEncrypt" */;
 			buildPhases = (
-				BCCF871E1FCBFFB9000FA824 /* Sources */,
 				BCCF871F1FCBFFB9000FA824 /* Frameworks */,
+				BCCF871E1FCBFFB9000FA824 /* Sources */,
 				BCCF87201FCBFFB9000FA824 /* Headers */,
 				BCCF87211FCBFFB9000FA824 /* Resources */,
 			);
@@ -339,6 +347,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCF87421FCC00AD000FA824 /* KYEncrypt.m in Sources */,
+				BCCF87431FCC00B2000FA824 /* KYGTMBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
