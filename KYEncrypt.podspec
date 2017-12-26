@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 s.name         = "KYEncrypt"
-s.version      = "0.0.2"
+s.version      = "0.0.5"
 s.summary      = "KYEncrypt 是一个加解密类库包括AES128,AES256,Base64,Md5等加密算法类库."
 
 s.homepage     = "https://github.com/kingly09/AES128Encrypt-objc"
