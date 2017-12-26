@@ -21,13 +21,10 @@ s.summary      = "KYEncrypt 是一个加解密类库包括AES128,AES256,Base64,M
 s.homepage     = "https://github.com/kingly09/AES128Encrypt-objc"
 s.license      = { :type => "MIT", :file => "LICENSE" }
 s.author       = { "kingly" => "libintm@163.com" }
-s.platform     = :ios, "7.0"
+s.platform     = :ios, "8.0"
 s.source       = { :git => "https://github.com/kingly09/AES128Encrypt-objc.git", :tag => s.version.to_s }
 s.social_media_url   = "https://github.com/kingly09"
 s.source_files = 'KYEncrypt/**/*'
-s.library  = 'crypto'
-s.frameworks =  "UIKit","Foundation"
 s.requires_arc = true
-
 
 end
