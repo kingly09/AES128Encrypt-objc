@@ -87,4 +87,5 @@
  */
 - (NSString *)AES256DecryptWithString:(NSString *)str withKey:(NSString *)key;
 
+
 @end
